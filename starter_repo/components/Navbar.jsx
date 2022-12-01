@@ -12,7 +12,8 @@ const Navbar = () => (
     whileInView="show"
     className={`${styles.xPaddings} py-8 relative`}
   >
-    navbar
+    <div className="absolute w-[50%] inset-0 gradient-01" />
+
   </motion.nav>
 );
 
