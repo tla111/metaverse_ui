@@ -8,8 +8,21 @@ import { NewFeatures, TitleText, TypingText } from '../components';
 import { planetVariants, staggerContainer, fadeIn } from '../utils/motion';
 
 const WhatsNew = () => (
-  <section>
-    What's new section
+  <section className={`${styles.paddings} relative z-10`}>
+    <motion.div
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-8`}
+    >
+      <motion.div
+        variants={fadeIn('right', 'tween', 0.2, 1)}
+        className="flex-[0.95] flex justify-center flex-col"
+      >
+        <TypingText />
+      </motion.div>
+    </motion.div>
   </section>
 );
 
