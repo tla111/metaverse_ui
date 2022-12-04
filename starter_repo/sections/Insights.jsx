@@ -9,8 +9,20 @@ import { InsightCard, TitleText, TypingText } from '../components';
 
 
 const Insights = () => (
-  <section>
-    Insights section
+  <section className={`${styles.paddings} relative z-10`}>
+    <motion.div
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className={`${styles.innerWidth} mx-auto flex flex-col`}
+    >
+      <TypingText title="| Insight" textStyles="text-center" />
+      <TitleText title={<>Insight about metaverse</>} textStyles="text-center" />
+      {insights.map((item, index) => (
+        <InsightCard key={`insight-${index}`} {...item} index={index + 1} />
+      ))}
+    </motion.div>
   </section>
 );
 
